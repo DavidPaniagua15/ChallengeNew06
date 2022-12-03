@@ -52,3 +52,21 @@ function getHistory() {
     });
 };
 
+//show the Today's card body
+var cardTodayBody = $('.cardBodyToday')
+
+//appliying the data from 'Today' and launch the five days forecast
+function getWeatherToday() {
+    var getUrlCurrent = 'https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${key}';
+
+    $(cardTodayBody).empty(); 
+
+    $.ajax({
+        url: getUrlCurrent,
+        method: 'GET',
+    }). then(function (resonponse) {
+        $('.cardTodayCityName').text(resonponse.name);
+        $('.cardTodayDate').text(date);
+        
+    })
+}
