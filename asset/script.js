@@ -42,5 +42,13 @@ function getHistory() {
     } if (!city) {
         return;
     }
-    
-}
+
+    //btn to start a search as well
+    $('.histBtn').on("click", function (event) {
+        event.preventDefault();
+        city = $(this).text();
+        fiveForecastEl.empty();
+        getWeatherToday();
+    });
+};
+
