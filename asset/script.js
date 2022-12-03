@@ -18,4 +18,29 @@ $('.search').on("click", function (event) {
     cityHist.push(city);
 
     localStorage.setItem('city', JSON.stringify(cityHist));
-})
+    fiveForecastEl.empty();
+    getHistory();
+    getWeatherToday();
+});
+
+//search history
+
+var contHistEl = $('.cityHist');
+function getHistory() {
+    contHistEl.empty();
+
+    for (let i = 0; i < cityHist.length; i++) {
+
+        var rowEl = $('<row>');
+        var btnEl = $('<button>').text('${cityHist[i]}')
+
+        rowEl.addClass('row histBtnRow');
+        btnEl.addClass('btn btn-outline-secondary histBtn');
+
+        contHistEl.prepend(rowEl);
+        rowEl.append(btnEl)
+    } if (!city) {
+        return;
+    }
+    
+}
