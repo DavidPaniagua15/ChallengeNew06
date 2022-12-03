@@ -67,6 +67,12 @@ function getWeatherToday() {
     }). then(function (resonponse) {
         $('.cardTodayCityName').text(resonponse.name);
         $('.cardTodayDate').text(date);
-        
+
+        //Items
+        $('.icons').attr('src', 'https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png');
+        //Temperature
+        var pEl = $('<p>').text('temperature: ${response.main.temp} °F');
+        cardTodayBody.append(pEl);
+
     })
 }
