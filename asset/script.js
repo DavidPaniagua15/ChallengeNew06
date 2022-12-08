@@ -91,7 +91,19 @@ function getWeatherToday() {
             var uviSpan = $('<span>').text(response.current.uvi);
             var uvi = response.current.uvi;
             pElUvi.append(uviSpan);
-            
+            cardTodayBody.append(pElUvi);
+            //set the UV
+            if (uvi >= 0 && uvi <= 2) {
+                uviSpan.attr('class', 'green');
+            } else if (uvi > 2 && uvi <= 5) {
+                uviSpan.attr('class', 'yellow')
+            } else if (uvi > 5 && uvi <= 7) {
+                uviSpan.attr('class', 'orange')
+            } else if (uvi > 7 && uvi <= 10) {
+                uviSpan.attr('class', 'red')
+            } else {
+                uviSpan.attr('class', 'purple')
+            }
             
         })
 
