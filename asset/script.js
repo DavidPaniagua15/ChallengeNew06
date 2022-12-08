@@ -87,6 +87,11 @@ function getWeatherToday() {
             url: getUrlUvi,
             Method: 'GET',
         }).then(function (response) {
+            var pElUvi = $('<p>').text('UV Index: ');
+            var uviSpan = $('<span>').text(response.current.uvi);
+            var uvi = response.current.uvi;
+            pElUvi.append(uviSpan);
+            
             
         })
 
