@@ -73,6 +73,23 @@ function getWeatherToday() {
         //Temperature
         var pEl = $('<p>').text('temperature: ${response.main.temp} °F');
         cardTodayBody.append(pEl);
+        //RealFeel
+        var pElTemp = $('<p>').text('RealFeel: ${response.main.RealFeel} °F');
+        cardTodayBody.append(pElTemp);
+        //city long
+        var cityLon = Response.coord.lon;
+        //city latitude
+        var cityLat = response.coord.lat;
+
+        var getUrlUvi = 'https://api.openweathermap.org/data/2.5/onecall?lat=${cityLat}&lon=${cityLon}&exclude=hourly,daily,minutely&appid=${key}';
+
+        $.ajax({
+            url: getUrlUvi,
+            Method: 'GET',
+        }).then(function (response) {
+            
+        })
+
 
     })
 }
