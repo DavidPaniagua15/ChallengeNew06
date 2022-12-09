@@ -30,3 +30,29 @@ header {
 .cardTodayDate {
     font-size: 20px;
 }
+
+.green {
+    background-color: lightcyan;
+}
+
+.yellow {
+    background-color: lightyellow;
+
+}
+
+.orange {
+    background-color: lightcoral;
+}
+
+.red {
+    background-color: lightpink;
+}
+
+.purple {
+    background-color: lightsalmon;
+}
+
+.icons {
+    width: 80 px;
+    height: 80 px;
+}
