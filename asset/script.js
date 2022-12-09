@@ -1,4 +1,3 @@
-var key = '64f2ee2a8261daa4d9f780f5b365f275';
 var city = 'Atlanta'
 
 //current time and date
@@ -105,8 +104,23 @@ function getWeatherToday() {
                 uviSpan.attr('class', 'purple')
             }
             
+        });
+
+
+    });
+    getFiveDayForecast();
+
+    function getFiveDayForecast() {
+        var getUrlCurrent = 'https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${key}';
+
+        $.ajax({
+            url: getUrlFiveDay,
+            method: 'GET',
+
         })
+    }
+    getHistory();
+    getWeatherToday();
+};
 
-
-    })
-}
+initLoad();
